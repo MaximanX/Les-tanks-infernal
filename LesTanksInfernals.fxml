@@ -9,15 +9,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="824.0" prefWidth="1224.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="824.0" prefWidth="1224.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
    <bottom>
       <HBox alignment="CENTER" prefHeight="160.0" prefWidth="1224.0" BorderPane.alignment="CENTER">
          <children>
             <VBox alignment="CENTER" prefHeight="160.0" prefWidth="160.0">
                <children>
-                  <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label text="Armes">
+                  <ImageView fx:id="ImageArme" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="LabelArme" text="Armes">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
@@ -28,7 +27,7 @@
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="550.0">
                      <children>
-                        <Label text="Player1">
+                        <Label fx:id="NomPlayer1" text="Player1">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
@@ -38,15 +37,15 @@
                               <Insets left="20.0" />
                            </HBox.margin>
                            <children>
-                              <ProgressBar prefHeight="18.0" prefWidth="480.0" progress="0.0" />
-                              <ProgressBar prefHeight="18.0" prefWidth="480.0" progress="0.0" />
+                              <ProgressBar fx:id="BarreDeViePlayer1" prefHeight="18.0" prefWidth="480.0" progress="0.0" />
+                              <ProgressBar fx:id="BarreDeGasPlayer1" prefHeight="18.0" prefWidth="480.0" progress="0.0" />
                            </children>
                         </VBox>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="550.0">
                      <children>
-                        <Label text="Player2">
+                        <Label fx:id="NomPlayer2" text="Player2">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
@@ -56,8 +55,8 @@
                               <Insets left="20.0" />
                            </HBox.margin>
                            <children>
-                              <ProgressBar prefHeight="18.0" prefWidth="480.0" progress="0.0" />
-                              <ProgressBar prefHeight="18.0" prefWidth="480.0" progress="0.0" />
+                              <ProgressBar fx:id="BarreDeViePlayer2" prefHeight="18.0" prefWidth="480.0" progress="0.0" />
+                              <ProgressBar fx:id="BarreDeGasPlayer2" prefHeight="18.0" prefWidth="480.0" progress="0.0" />
                            </children>
                         </VBox>
                      </children>
@@ -68,8 +67,8 @@
                <children>
                   <VBox alignment="TOP_CENTER" prefHeight="160.0" prefWidth="118.0">
                      <children>
-                        <ImageView fitHeight="80.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
-                        <Label text="Vent">
+                        <ImageView fx:id="ImageVent" fitHeight="80.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="LabelVent" text="Vent">
                            <VBox.margin>
                               <Insets top="30.0" />
                            </VBox.margin>
@@ -81,8 +80,8 @@
                   </VBox>
                   <VBox alignment="TOP_CENTER" prefHeight="160.0" prefWidth="118.0">
                      <children>
-                        <ImageView fitHeight="80.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
-                        <Label text="ConditionTerrain">
+                        <ImageView fx:id="ImageConditionTerrain" fitHeight="80.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="LabelConditionTerrain" text="ConditionTerrain">
                            <VBox.margin>
                               <Insets top="30.0" />
                            </VBox.margin>
@@ -91,11 +90,11 @@
                   </VBox>
                </children>
             </HBox>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="ImageSwag" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </HBox>
    </bottom>
    <center>
-      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <Pane fx:id="MainPannel" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>
