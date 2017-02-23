@@ -1,12 +1,16 @@
 package jeu;
 
+import java.awt.MouseInfo;
 import java.util.ArrayList;
 import java.util.Random;
+
+import com.sun.corba.se.spi.legacy.connection.GetEndPointInfoAgainException;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
+import javafx.scene.effect.Light.Point;
 import projectiles.ProjectilesFactory;
 import tanks.*;
 import terrain.IniTerrain;
@@ -19,7 +23,6 @@ public class Deroulement extends Service<Void>{
 	public final static int VENT_MAX = 20;
 	public final static int VENT_MIN = -20;
 	private SimpleStringProperty vent = new SimpleStringProperty();
-	private int[] variationVent = {0,0,0,0,0,0,0,0,-1,1};
 	private int ventCache = 0;
 	
 	/**
@@ -97,6 +100,17 @@ public class Deroulement extends Service<Void>{
 		Random rand = new Random();
 		int temp = rand.nextInt(3) - 1;
 		ventCache = ventCache + temp;
+	}
+	
+	/**
+	 * Donne la position du curseur dans l'écran sous la forme d'un Point (x, y) dont nous pouvons aller chercher les parties avec des gets
+	 * @return
+	 */
+	
+	public java.awt.Point cursorPosition() {
+		
+		return MouseInfo.getPointerInfo().getLocation();
+		
 	}
 	
 	

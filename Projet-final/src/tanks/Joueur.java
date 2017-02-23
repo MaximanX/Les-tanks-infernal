@@ -1,5 +1,7 @@
 package tanks;
 
+import java.awt.Point;
+
 import armes.Armes;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.shape.Polygon;
@@ -16,7 +18,8 @@ public class Joueur extends Tank {
 	private SimpleDoubleProperty gaz = new SimpleDoubleProperty();
 	private SimpleDoubleProperty posX = new SimpleDoubleProperty();
 	private SimpleDoubleProperty posY = new SimpleDoubleProperty();
-	private double angleCanon;
+	private Point cannonBase;
+	private Point cannonBout;
 	private int vitesse;
 	private Polygon tank;
 
@@ -24,6 +27,8 @@ public class Joueur extends Tank {
 
 		setPosX(posX);
 		setPosY(posY);
+		setCannonBase(posX + 7, posY + 10);
+		setCannonBout(posX + 30, posY + 10);
 	}
 
 	public double getPosX() {
@@ -37,9 +42,9 @@ public class Joueur extends Tank {
 	public void setPosX(double posX) {
 		if (verifierX(posX)) {
 			this.posX.set(posX);
-		}	
+		}
 	}
-	
+
 	private boolean verifierX(double posX) {
 		boolean result = false;
 		if ((posX >= MIN_X) && (posX <= MAX_X)) {
@@ -53,7 +58,7 @@ public class Joueur extends Tank {
 			this.posY.set(posY);
 		}
 	}
-	
+
 	private boolean verifierY(double posY) {
 		boolean result = false;
 		if ((posY >= MIN_Y) && (posY <= MAX_Y)) {
@@ -94,7 +99,6 @@ public class Joueur extends Tank {
 		return this.gaz;
 	}
 
-	
 	public double getGaz() {
 		return gaz.get();
 	}
@@ -128,6 +132,29 @@ public class Joueur extends Tank {
 		}
 		return retour;
 
+	}
+
+	public Point getCannonBase() {
+		return cannonBase;
+	}
+
+	public void setCannonBase(double posX2, double posY2) {
+
+		if ((posX2 < MAX_X) && (posX2 > MIN_X) && (posY2 < MAX_Y) && (posY2 > MAX_Y)) {
+			this.cannonBase.setLocation(posX2, posY2);
+		}
+
+	}
+
+	public Point getCannonBout() {
+		return cannonBout;
+	}
+
+	public void setCannonBout(double x, double y) {
+		
+		if ((x < MAX_X) && (x > MIN_X) && (y < MAX_Y) && (y > MAX_Y)) {
+			this.cannonBout.setLocation(x, y);
+		}
 	}
 
 }

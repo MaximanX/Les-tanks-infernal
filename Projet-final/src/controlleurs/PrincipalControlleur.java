@@ -10,6 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import jeu.Deroulement;
@@ -82,20 +83,27 @@ public class PrincipalControlleur {
 	}
 	
 	/**
-	 * La fonction qui s'occupe de placer un tank sur l'écran
+	 * La fonction qui s'occupe de placer un tank sur l'écran et le cannon
 	 */
 
 	private void ajouterTank() {
 		Polygon tank;
+		Line cannon;
 		for (int x = 0; x < deroulement.getTank().length; x++) {
+			cannon = new Line(0.0, 0.0,30.0, 0.0);
 			tank = new Polygon();
 			tank.getPoints().addAll(new Double[] { 0.0, 20.0, 0.0, 10.0, 5.0, 5.0, 5.0, 0.0, 10.0, 0.0, 10.0, 5.0, 15.0,
 					10.0, 15.0, 20.0, 0.0, 20.0 }); /* TODO un plus beau tank */
+			cannon.translateXProperty().bind(deroulement.getTank()[x].PosX().add(5.0));
+			cannon.translateYProperty().bind(deroulement.getTank()[x].PosY().add(10.0));
 			tank.translateXProperty().bind(deroulement.getTank()[x].PosX());
 			tank.translateYProperty().bind(deroulement.getTank()[x].PosY());
+			MainPannel.getChildren().add(cannon);
 			MainPannel.getChildren().add(tank);
 		}
 	}
+	
+	
 
 	/**
 	 * S'occupe d'initialiser les barres de vie pour le player et l'AI
@@ -131,6 +139,8 @@ public class PrincipalControlleur {
 		ImageArme.setImage(new Image((deroulement.getTank()[0].getArme().getPath())));
 
 	}
+	
+	
 	
 
 }

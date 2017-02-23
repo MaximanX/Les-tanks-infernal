@@ -15,9 +15,9 @@ public abstract class Tank {
 	private double angleCanon;
 	private int vitesse;
 	private Polygon tank;
-	public static final int MAX_X = 1209;
+	public static final int MAX_X = 1224;
 	public static final int MIN_X = 0;
-	public static final int MAX_Y = 644;
+	public static final int MAX_Y = 664;
 	public static final int MIN_Y = 0;
 
 	/*
