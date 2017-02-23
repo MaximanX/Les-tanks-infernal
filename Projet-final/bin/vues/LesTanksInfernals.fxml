@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="824.0" prefWidth="1224.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlleurs.PrincipalControlleur">
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="160.0" prefWidth="1224.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="160.0" prefWidth="160.0">
+               <children>
+                  <ImageView fx:id="ImageArme" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="LabelArme" text="Armes">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefHeight="160.0" prefWidth="550.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="550.0">
+                     <children>
+                        <Label fx:id="NomPlayer1" text="Player1">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <VBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="480.0">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <children>
+                              <ProgressBar fx:id="BarreDeViePlayer1" prefHeight="18.0" prefWidth="480.0" progress="0.0" styleClass="progress-bar-vie" stylesheets="@../../res/Infernal.css" />
+                              <ProgressBar fx:id="BarreDeGasPlayer1" prefHeight="18.0" prefWidth="480.0" progress="0.0" styleClass="progress-bar-gaz" stylesheets="@../../res/Infernal.css" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="550.0">
+                     <children>
+                        <Label fx:id="NomPlayer2" text="Player2">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="480.0">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <children>
+                              <ProgressBar fx:id="BarreDeViePlayer2" prefHeight="18.0" prefWidth="480.0" progress="0.0" styleClass="progress-bar-vie" stylesheets="@../../res/Infernal.css" />
+                              <ProgressBar fx:id="BarreDeGasPlayer2" prefHeight="18.0" prefWidth="480.0" progress="0.0" styleClass="progress-bar-gaz" stylesheets="@../../res/Infernal.css" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox prefHeight="160.0" prefWidth="258.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="160.0" prefWidth="118.0">
+                     <children>
+                        <ImageView fx:id="ImageVent" fitHeight="80.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../res/flèche.png" />
+                           </image></ImageView>
+                        <Label fx:id="LabelVent" text="Vent">
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="160.0" prefWidth="118.0">
+                     <children>
+                        <ImageView fx:id="ImageConditionTerrain" fitHeight="80.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="LabelConditionTerrain" text="ConditionTerrain">
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <ImageView fx:id="ImageSwag" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <Pane fx:id="MainPannel" onMouseClicked="#tirer" onScroll="#changementArme" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
